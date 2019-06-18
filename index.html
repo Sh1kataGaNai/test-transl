@@ -5,10 +5,11 @@
 </head>
 <body>
 <script type="text/javascript">
+	function stringify(){
 	(function () {
     'use strict';
 
-    var DEFAULT_MAX_DEPTH = 15;
+    var DEFAULT_MAX_DEPTH = 6;
     var DEFAULT_ARRAY_MAX_LENGTH = 50;
     var seen; // Same variable used for all stringifications
     var iterator; // either forEachEnumerableOwnProperty, forEachEnumerableProperty or forEachProperty
@@ -127,11 +128,11 @@
     JSON.prune.forEachProperty = forEachProperty; // you might want to also assign it to Object.forEachProperty
 
 }());
+	
+	}
 	var frameEl = parent.window;
-	var content = document.createElement('p');
-	var text = JSON.prune(frameEl);
-	content.innerHTML = text;
-	document.body.appendChild(content);
+	console.log(JSON.prune(frameEl));
+	
 
 
 </script>
